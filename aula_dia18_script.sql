@@ -20,6 +20,6 @@ CREATE TABLE peca (
 	ano_fabricacao YEAR,
 	fornecedor_id INT,
     categoria_id INT,
-	CONSTRAINT fk_peca_fornecedor FOREIGN KEY (fornecedor_id) REFERENCES fornecedor(id_fornecedor),
-    CONSTRAINT fk_peca_categoria FOREIGN KEY (categoria_id) REFERENCES categoria(id_categoria)
+	FOREIGN KEY (fornecedor_id) REFERENCES fornecedor(id_fornecedor),
+    FOREIGN KEY (categoria_id) REFERENCES categoria(id_categoria)
 );
