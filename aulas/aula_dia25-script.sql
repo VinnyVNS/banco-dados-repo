@@ -61,3 +61,5 @@ ALTER TABLE ticket DROP COLUMN descricao;
 
 DESCRIBE setor;
 DESCRIBE ticket;
+
+DROP TABLE vaga;
