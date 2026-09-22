@@ -1,5 +1,3 @@
-DROP DATABASE banco_abc;
-
 CREATE DATABASE banco_abc;
 
 USE banco_abc;
