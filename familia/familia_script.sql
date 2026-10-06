@@ -35,8 +35,24 @@ VALUES
 ('Mateus');
 
 CREATE VIEW paiFilho AS
-SELECT pai.id_pai, pai.nome_pai, pai.filho_id, filho.nome_filho FROM pai
-JOIN filho
+SELECT pai.nome_pai, filho.nome_filho FROM pai
+LEFT JOIN filho
+ON pai.filho_id = filho.id_filho;
+
+CREATE VIEW filhoPai AS
+SELECT pai.nome_pai, filho.nome_filho FROM pai
+RIGHT JOIN filho
+ON pai.filho_id = filho.id_filho;
+
+CREATE VIEW paiFilhoFull AS
+SELECT pai.nome_pai, filho.nome_filho FROM pai
+LEFT JOIN filho
+ON pai.filho_id = filho.id_filho
+UNION
+SELECT pai.nome_pai, filho.nome_filho FROM pai
+RIGHT JOIN filho
 ON pai.filho_id = filho.id_filho;
 
 SELECT * FROM paiFilho;
+SELECT * FROM filhoPai;
+SELECT * FROM paiFilhoFull;
